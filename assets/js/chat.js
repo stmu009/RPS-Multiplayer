@@ -1,18 +1,21 @@
-
 var usernameInput = document.querySelector("#username");
 var textInput = document.querySelector("#text");
 var postButton = document.querySelector("#post");
 
-postButton.addEventListener("click", function() {
+postButton.addEventListener("click", function (e) {
+  e.preventDefault();
   var msgUser = usernameInput.value;
   var msgText = textInput.value;
-  myFirebase.push({ username: msgUser, text: msgText });
+  myFirebase.push({
+    username: msgUser,
+    text: msgText
+  });
   textInput.value = "";
 });
 
 /** Function to add a data listener **/
-var startListening = function() {
-  myFirebase.on("child_added", function(snapshot) {
+var startListening = function () {
+  myFirebase.on("child_added", function (snapshot) {
     var msg = snapshot.val();
 
     var msgUsernameElement = document.createElement("b");
@@ -25,10 +28,9 @@ var startListening = function() {
     msgElement.appendChild(msgUsernameElement);
     msgElement.appendChild(msgTextElement);
 
-    document.getElementById("results").appendChild(msgElement);
-
     msgElement.className = "msg";
-    document.getElementById("results").appendChild(msgElement);
+    var results = document.getElementById("results");
+    results.insertBefore(msgElement, results.firstChild);
   });
 };
 

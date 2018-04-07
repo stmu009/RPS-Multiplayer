@@ -6,36 +6,46 @@
   --color5: rgba(26, 143, 227, 1);
 }
 
-.body {
-}
-
-.chat-collection {
-  margin: 0 auto;
-  background-color: var(--color5);
-  width: calc(100% / 3);
-  /* float: right; */
-  margin-right: 1rem;
-  margin-top: 1rem;
-  text-align: center;
-  min-width: 120px;
-}
-
 body {
   font-family: 'HelveticaNeue-Light';
 }
+
 .msg {
   margin: 10px 0;
   padding: 10px;
   width: 400px;
-  background-color: #efefef;
-}
-#username, #text {
-  margin: 5px 0px;
-}
-#post {
-  padding: 0.5em 1em;
-  background-color: #50b1ff;
-  border: none;
-  color: #FFF;
+  background-color: var(--color2);
+  /* #efefef; */
 }
 
+#username,
+#text {
+  margin: 5px 0px;
+  /* background-color: var(--color2); */
+}
+
+#post {
+  padding: 0.5em 1em;
+  background-color: var(--color1);
+  border: none;
+  color: #FFF;
+  margin-bottom: 1rem;
+}
+
+#results {
+  height: 20rem;
+  overflow-y: scroll;
+  background-color: var(--color3);
+}
+
+.nav {
+  background-color: var(--color5);
+}
+
+.page-footer {
+  background-color: var(--color5);
+}
+
+.footer-copyright {
+  background-color: var(--color5) !important;
+}
