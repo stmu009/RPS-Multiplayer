@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Title of the document</title>
+  <title>PokeBattles</title>
   <!-- Material Icon CDN -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS CDN -->
@@ -17,27 +17,88 @@
 </head>
 
 <body>
-  <header>
-    <nav class="nav">
-      <div class="nav-wrapper">
-        <div class="container">
-          <div class="input-field col s12 l6">
-            <input type="text" id="username" class="validate" placeholder="type your name here">
-          </div>
-        </div>
-      </div>
-    </nav>
+
+  <header class="center">
+    <h1 id="title">PokeBattles</h1>
   </header>
   <main>
-    <div id="results"></div>
-    <form action="">
-      <div class="input-field col s12">
-        <textarea id="text" class="materialize-textarea" placeholder="type in a message and then click the submit button"></textarea>
+    <!-- modal? -->
+    <!-- enter name -->
+    <form id="username-form" class="center" action="">
+      <div class="input-field col s12 l6 center">
+        <input type="text" id="username" class="validate center" placeholder="type your name here">
       </div>
-      <button id="post" class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
     </form>
+    <!-- instructions -->
+    <div id="instructions" class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content center">
+          <p>Pick Rock, Paper or Scissors. Wait for your opponent to make their choice.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card horizontal">
+      <!-- player1 card-->
+      <div class="card-image">
+        <img src="">
+      </div>
+      <div class="card-stacked">
+        <!-- name -->
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <!-- options -->
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+        <!-- win loss tie tally -->
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+      <!-- results card -->
+      <div class="card-image">
+        <img src="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+      <!-- player2 card-->
+      <div class="card-image">
+        <img src="">
+      </div>
+      <div class="card-stacked">
+        <!-- name -->
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <!-- options -->
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+        <!-- win loss tie tally -->
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+      </div>
+    </div>
+    <!-- chatbox -->
+    <div id="chatbox" class="card">
+      <div class="card-content">
+        <span class="card-title center">Chat</span>
+        <div id="messages" class="center col"></div>
+        <form action="">
+          <div class="input-field col s12">
+            <textarea id="text" class="materialize-textarea" placeholder="type in a message and then click the submit button"></textarea>
+          </div>
+          <button id="post" class="btn-floating btn-large halfway-fab waves-effect waves-light red">            
+            <i id="send-icon" class="material-icons">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
 
   </main>
   <footer class="page-footer">
@@ -47,6 +108,7 @@
       </div>
     </div>
   </footer>
+
   <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
@@ -55,8 +117,7 @@
   <!-- Local JS Files -->
   <script src="assets/js/database.js"></script>
   <script src="assets/js/chat.js"></script>
-  <script>
-  </script>
+
 </body>
 
 </html>

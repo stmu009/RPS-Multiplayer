@@ -28,9 +28,10 @@ var startListening = function () {
     msgElement.appendChild(msgUsernameElement);
     msgElement.appendChild(msgTextElement);
 
-    msgElement.className = "msg";
-    var results = document.getElementById("results");
-    results.insertBefore(msgElement, results.firstChild);
+    msgElement.className = "msg center";
+    var messages = document.getElementById("messages");
+    messages.insertBefore(msgElement, messages.firstChild);
+    // messages.className="center";
   });
 };
 
