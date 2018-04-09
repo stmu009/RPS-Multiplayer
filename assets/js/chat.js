@@ -23,6 +23,7 @@ var startListening = function () {
 
     var msgTextElement = document.createElement("p");
     msgTextElement.textContent = msg.text;
+    msgTextElement.className="left";
 
     var msgElement = document.createElement("div");
     msgElement.appendChild(msgUsernameElement);
