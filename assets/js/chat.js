@@ -23,7 +23,7 @@ var startListening = function () {
 
     var msgTextElement = document.createElement("p");
     msgTextElement.textContent = msg.text;
-    msgTextElement.className="left";
+    msgTextElement.style= "text-align:left;";
 
     var msgElement = document.createElement("div");
     msgElement.appendChild(msgUsernameElement);

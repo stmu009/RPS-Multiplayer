@@ -44,43 +44,76 @@
       </div>
       <div class="card-stacked">
         <!-- name -->
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        <div class="card-content center">
+          <p>Waiting for Player 1...</p>
         </div>
         <!-- options -->
-        <div class="card-action">
-          <a href="#">This is a link</a>
+        <div class="card-action card-stacked options">
+          <a id="player1-rock" class="card-panel center" href="#">Rock</a>
+          <a id="player1-paper" class="card-panel center" href="#">Paper</a>
+          <a id="player1-scissors" class="card-panel center" href="#">Scissors</a>
         </div>
         <!-- win loss tie tally -->
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        <div class="card-content center">
+          <div>Wins:
+            <span id="player2-wins">0</span>
+            Losses:
+            <span id="player2-losses">0</span>
+            Ties:
+            <span id="player2-ties">0</span>
+          </div>
         </div>
       </div>
+
       <!-- results card -->
-      <div class="card-image">
-        <img src="">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+      <div id="round-results" class="card-stacked">
+        <div class="card-image">
+          <img id="winner-image" src="">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content center">
+            <h4><span id="winner">waiting for players to join...</span></h4>
+            <div class="preloader-wrapper big active center-block">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
+
       <!-- player2 card-->
       <div class="card-image">
         <img src="">
       </div>
       <div class="card-stacked">
         <!-- name -->
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        <div class="card-content center">
+          <p>Waiting for Player 2...</p>
         </div>
         <!-- options -->
-        <div class="card-action">
-          <a href="#">This is a link</a>
+        <div class="card-action card-stacked options">
+          <a id="player2-rock" class="card-panel center" href="#">Rock</a>
+          <a id="player2-paper" class="card-panel center" href="#">Paper</a>
+          <a id="player2-scissors" class="card-panel center" href="#">Scissors</a>
         </div>
         <!-- win loss tie tally -->
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        <div class="card-content center">
+          <div>Wins:
+            <span id="player2-wins">0</span>
+            Losses:
+            <span id="player2-losses">0</span>
+            Ties:
+            <span id="player2-ties">0</span>
+          </div>
         </div>
       </div>
     </div>
@@ -93,7 +126,7 @@
           <div class="input-field col s12">
             <textarea id="text" class="materialize-textarea" placeholder="type in a message and then click the submit button"></textarea>
           </div>
-          <button id="post" class="btn-floating btn-large halfway-fab waves-effect waves-light red">            
+          <button id="post" class="btn-floating btn-large halfway-fab waves-effect waves-light red">
             <i id="send-icon" class="material-icons">send</i>
           </button>
         </form>
@@ -104,7 +137,7 @@
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
-        © 2017 Damian Ramirez
+        © 2018 Damian Ramirez
       </div>
     </div>
   </footer>

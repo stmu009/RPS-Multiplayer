@@ -1,18 +1,29 @@
 :root {
-  --color1: rgb(177, 4, 18);
-  --color2: rgb(253, 253, 251);
-  --color3: rgb(8, 8, 8);
-  --color4: rgba(102, 16, 242, 1);
-  --color5: rgba(26, 143, 227, 1);
+  --color1: rgb(238, 21, 21);
+  --color2: rgb(240, 240, 240);
+  --color3: rgb(34, 34, 36);
+  --color4: rgba(5, 44, 239, 1);
+  --color5: rgba(244, 220, 38);
 }
 
 body {
   font-family: "HelveticaNeue-Light";
 }
 
-main{
+main {
   width: 90%;
   margin: 0 auto;
+}
+
+.options {
+  display: grid !important;
+}
+a{
+  color: var(--color4) !important;
+}
+
+#round-results{
+border: solid thin var(--color5);
 }
 
 .msg {
@@ -32,6 +43,7 @@ main{
   max-width: 60%;
   min-width: 60%;
 }
+
 #text {
   margin: 5px 0px;
   background-color: var(--color2);
@@ -41,16 +53,15 @@ main{
   background-color: var(--color1);
   border: none;
   color: #fff;
-  margin-bottom: 1rem;
-  bottom: 3rem;
+  margin-right: 2%;
+  bottom: 10%;
 }
-
 
 #messages {
   height: 20rem;
   overflow-y: scroll;
-  background-color: var(--color3);
-  border: solid thick var(--color3);
+  background-color: var(--color1);
+  border: solid thick var(--color5);
 }
 
 header {
