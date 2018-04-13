@@ -1,22 +1,53 @@
-//ask for name
 
-//assign player1 role
-    //if no player 1 then assign to player 1
-//assign player2 role
-    //if player1 but no player 2 then allow player2
-//assign watcher roles
-    // if player1 and player2 then allow to watch
+// get name value
 
-// database starts a new game
+// must have name value to enable buttons in modal
 
-// update names
+$('.player1-selection').click(function (e) { 
+    e.preventDefault();
+    console.log('update db with rps click', $(this).text());
+});
 
-// activate rps options 
-// deactivate rps options 
+$('.player2-selection').click(function (e) { 
+    e.preventDefault();
+    console.log('update db with rps click', $(this).text());
+});
 
-//determine winner
-//show results
 
-//start next round
+function updateRole (arguments) {
+    console.log('check available roles');
+    console.log('update database with user role - player1, player2, watcher')
+}
+
+function updatePlayerChoice (arguments) {
+    console.log(`update the database with the player's selection`)
+}
+
+function determineWinner (arguments) {
+    console.log('compare values from database and determind and show winner');
+}
+
+function updatePlayerScore (arguments) {
+    console.log(`update the database with players' score`);
+}
+
+function disableRPSButtons (arguments) {
+    console.log('disable the rps buttons');
+}
+
+// handle when player leaves
+
+//update results section as things happen
+// 0. waiting on both players to choose
+// 1. player 1 has chosen waiting on player 2
+// 2. player 2 has chosen waiting on player 1
+// 3. both players have chosen waiting on result
+// 4. show results
+// 5. load next round
+// x. player has left
+
+// 5 second fade into start of next round 
+// show status
+// enable rps buttons
 
 //background song

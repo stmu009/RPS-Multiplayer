@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokeBattles</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <!-- Material Icon CDN -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize CSS CDN -->
@@ -25,56 +28,55 @@
     <!-- modal? -->
     <!-- Modal Trigger -->
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal Fixed Footer</a>
-    
+
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Disagree</a>
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
-    </div>
-    <!-- enter name -->
-    <form id="username-form" class="center" action="">
-      <div class="input-field col s12 l6 center">
-        <input type="text" id="username" class="validate center" placeholder="type your name here">
-      </div>
-    </form>
-    <!-- instructions -->
-    <div id="instructions" class="card horizontal">
-      <div class="card-stacked">
-        <div class="card-content center">
-          <p>Pick Rock, Paper or Scissors. Wait for your opponent to make their choice.</p>
+        <!-- enter name -->
+        <form id="username-form" class="center" action="">
+          <div class="input-field col s12 l6 center">
+            <input type="text" id="username" class="validate center" placeholder="type your name here">
+          </div>
+        </form>
+        <!-- instructions -->
+        <div id="instructions" class="card horizontal">
+          <div class="card-stacked">
+            <div class="card-content center">
+              <p>Pick Rock, Paper or Scissors. Wait for your opponent to make their choice.</p>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="modal-footer">
+        <a id="play-button" href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">play</a>
+        <a id="watch-button" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">watch</a>
+      </div>
     </div>
+
     <div class="card horizontal">
       <!-- player1 card-->
       <div id="player1-image-section" class="card-image">
-        <img id=player1-image" src="">
+        <img id="player1-image" src="">
       </div>
       <div class="card-stacked">
         <!-- name -->
-        <div class="card-content center">
+        <div id="player1-name" class="card-content center">
           <p>Waiting for Player 1...</p>
         </div>
         <!-- options -->
         <div class="card-action card-stacked options">
-          <a id="player1-rock" class="card-panel center" href="#">Rock</a>
-          <a id="player1-paper" class="card-panel center" href="#">Paper</a>
-          <a id="player1-scissors" class="card-panel center" href="#">Scissors</a>
+          <a id="player1-rock" disabled="disabled" class="player1-selection card-panel center" href="#">Rock</a>
+          <a id="player1-paper" disabled="disabled" class="player1-selection card-panel center" href="#">Paper</a>
+          <a id="player1-scissors" disabled="disabled" class="player1-selection card-panel center" href="#">Scissors</a>
         </div>
         <!-- win loss tie tally -->
         <div class="card-content center">
           <div>Wins:
-            <span id="player2-wins">0</span>
+            <span id="player1-wins">0</span>
             Losses:
-            <span id="player2-losses">0</span>
+            <span id="player1-losses">0</span>
             Ties:
-            <span id="player2-ties">0</span>
+            <span id="player1-ties">0</span>
           </div>
         </div>
       </div>
@@ -86,20 +88,22 @@
         </div>
         <div class="card-stacked">
           <div class="card-content center">
-            <h4><span id="winner">waiting for players to join...</span></h4>
+            <h4>
+              <span id="winner">waiting for players to join...</span>
+            </h4>
             <div class="preloader-wrapper big active center-block">
-                <div class="spinner-layer spinner-blue-only">
-                  <div class="circle-clipper left">
-                    <div class="circle"></div>
-                  </div>
-                  <div class="gap-patch">
-                    <div class="circle"></div>
-                  </div>
-                  <div class="circle-clipper right">
-                    <div class="circle"></div>
-                  </div>
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -110,14 +114,14 @@
       </div>
       <div class="card-stacked">
         <!-- name -->
-        <div class="card-content center">
+        <div id="player2-name" class="card-content center">
           <p>Waiting for Player 2...</p>
         </div>
         <!-- options -->
         <div class="card-action card-stacked options">
-          <a id="player2-rock" class="card-panel center" href="#">Rock</a>
-          <a id="player2-paper" class="card-panel center" href="#">Paper</a>
-          <a id="player2-scissors" class="card-panel center" href="#">Scissors</a>
+          <a id="player2-rock" disabled="disabled" class="player2-selection card-panel center" href="#">Rock</a>
+          <a id="player2-paper" disabled="disabled" class="player2-selection card-panel center" href="#">Paper</a>
+          <a id="player2-scissors" disabled="disabled" class="player2-selection card-panel center" href="#">Scissors</a>
         </div>
         <!-- win loss tie tally -->
         <div class="card-content center">
@@ -165,6 +169,7 @@
   <script src="assets/js/database.js"></script>
   <script src="assets/js/chat.js"></script>
   <script src="assets/js/modal.js"></script>
+  <script src="assets/js/rps.js"></script>
 
 </body>
 
