@@ -1,7 +1,7 @@
 // generate random pokemon and set image
 var contentsJSON = {}
 
-function updatePlayerImage(arguments) {
+function updatePlayerImage(player) {
     var randomPokemon = Math.floor(Math.random() * 802)
 
     // console.log(`set random pokemon id ${randomPokemon}`);
@@ -13,8 +13,8 @@ function updatePlayerImage(arguments) {
         .then(contents => {
             contentsJSON = $.parseJSON(contents);
             // console.log('set image url src:', contentsJSON.sprites.front_shiny);
-            $('#player1-image').attr('src', contentsJSON.sprites.front_shiny);
-            $('#player1-image-name').text(contentsJSON.name);
+            $('#'+player+'-image').attr('src', contentsJSON.sprites.front_shiny);
+            $('#'+player+'-image-name').text(contentsJSON.name);
         })
         .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 }
