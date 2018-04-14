@@ -9,3 +9,14 @@
 
 var apiKey = "AIzaSyCpzhTzwNybXFiq8_42bIuUZS85e392xp0";
 var myFirebase = new Firebase("https://marvel-fight-chat.firebaseio.com/");
+
+var databaseValues = {
+    "player1": "damian",
+    "player1-losses": 0,
+    "player1-ties": 0,
+    "player1-wins": 0,
+    "player2": "alex",
+    "player2-losses": 0,
+    "player2-ties": 0,
+    "player2-wins": 0,
+}

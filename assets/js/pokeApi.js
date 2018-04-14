@@ -4,7 +4,7 @@ var contentsJSON = {}
 function updatePlayerImage(arguments) {
     var randomPokemon = Math.floor(Math.random() * 802)
 
-    console.log(`random pokemon id ${randomPokemon}`);
+    // console.log(`set random pokemon id ${randomPokemon}`);
     url = `http://pokeapi.co/api/v2/pokemon/${randomPokemon}/`
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -12,7 +12,7 @@ function updatePlayerImage(arguments) {
         .then(response => response.text())
         .then(contents => {
             contentsJSON = $.parseJSON(contents);
-            console.log('src:', contentsJSON.sprites.front_shiny);
+            // console.log('set image url src:', contentsJSON.sprites.front_shiny);
             $('#player1-image').attr('src', contentsJSON.sprites.front_shiny);
             $('#player1-image-name').text(contentsJSON.name);
         })
