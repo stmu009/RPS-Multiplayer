@@ -5,13 +5,14 @@ $(document).ready(function () {
   audio.loop = true;
   audio.play();
 });
+var role = "watcher";
 
 function updateDBValues(params) {
   var ref = myFirebase.ref();
   ref.once('value')
   .then(function(dataSnapshot) {
-    console.log('p1val:', dataSnapshot.val());
-    console.log('databaseValues:', databaseValues);
+    // console.log('p1val:', dataSnapshot.val());
+    // console.log('databaseValues:', databaseValues);
     databaseValues=dataSnapshot.val();
   });
   ref.on('child_changed', function (dataSnapshot){
@@ -22,7 +23,15 @@ function updateDBValues(params) {
     valueChanged=dataSnapshot.val();
     databaseValues[keyChanged]=valueChanged;
     // console.log('new db values', databaseValues);
-  }) 
+  })
+var disconnectRef = myFirebase.ref();
+disconnectRef.onDisconnect().update({
+  "player1": "",
+    "player1-losses": 0,
+    "player1-ties": 0,
+    "player1-wins": 0,
+});
+
 }
 
 
