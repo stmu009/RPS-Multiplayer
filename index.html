@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
   <link rel="stylesheet" href="assets/css/chat.css">
   <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
 </head>
@@ -22,13 +23,9 @@
 <body>
 
   <header class="center">
-    <h1 id="title">PokeBattles</h1>
+    <h1 id="title">PokéBattles</h1>
   </header>
   <main>
-    <!-- modal? -->
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal Fixed Footer</a>
-
     <!-- Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
@@ -38,14 +35,6 @@
             <input type="text" id="username" class="validate center" placeholder="type your name here">
           </div>
         </form>
-        <!-- instructions -->
-        <div id="instructions" class="card horizontal">
-          <div class="card-stacked">
-            <div class="card-content center">
-              <p>Pick Rock, Paper or Scissors. Wait for your opponent to make their choice.</p>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="modal-footer">
         <a id="play-button" href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">play</a>
@@ -55,85 +44,89 @@
 
     <div class="card horizontal">
       <!-- player1 card-->
-      <div id="player1-image-section" class="card-image">
-        <img id="player1-image" src="">
-      </div>
       <div class="card-stacked">
         <!-- name -->
         <div id="player1-name" class="card-content center">
           <p>Waiting for Player 1...</p>
         </div>
-        <!-- options -->
-        <div class="card-action card-stacked options">
-          <a id="player1-rock" disabled="disabled" class="player1-selection card-panel center" href="#">Rock</a>
-          <a id="player1-paper" disabled="disabled" class="player1-selection card-panel center" href="#">Paper</a>
-          <a id="player1-scissors" disabled="disabled" class="player1-selection card-panel center" href="#">Scissors</a>
+        <!-- player1 image -->
+        <div style="width: 100% !important; margin: 0 auto;" id="player1-image-section" class="card-image center">
+          <img style="width: 100%; margin-top: -25%; margin-bottom: -25%;" class="center" id="player1-image" src="">
+          <h5 style="width: 100%; margin-top:-25%;"class="card-content center" id="player1-image-name"></h5>
         </div>
-        <!-- win loss tie tally -->
-        <div class="card-content center">
-          <div>Wins:
-            <span id="player1-wins">0</span>
-            Losses:
-            <span id="player1-losses">0</span>
-            Ties:
-            <span id="player1-ties">0</span>
-          </div>
+      <!-- options -->
+      <div class="card-action card-stacked options">
+        <a id="player1-rock" disabled="disabled" class="player1-selection card-panel center" href="#">Rock</a>
+        <a id="player1-paper" disabled="disabled" class="player1-selection card-panel center" href="#">Paper</a>
+        <a id="player1-scissors" disabled="disabled" class="player1-selection card-panel center" href="#">Scissors</a>
+      </div>
+      <!-- win loss tie tally -->
+      <div class="card-content center">
+        <div>Wins:
+          <span id="player1-wins">0</span>
+          Losses:
+          <span id="player1-losses">0</span>
+          Ties:
+          <span id="player1-ties">0</span>
         </div>
       </div>
+      </div>
 
-      <!-- results card -->
-      <div id="round-results" class="card-stacked">
-        <div class="card-image">
-          <img id="winner-image" src="">
-        </div>
-        <div class="card-stacked">
-          <div class="card-content center">
-            <h4>
-              <span id="winner">waiting for players to join...</span>
-            </h4>
-            <div class="preloader-wrapper big active center-block">
-              <div class="spinner-layer spinner-blue-only">
-                <div class="circle-clipper left">
-                  <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                  <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                  <div class="circle"></div>
-                </div>
+    <!-- results card -->
+    <div id="round-results" class="card-stacked">
+      <div class="card-image">
+        <img id="winner-image" src="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content center">
+          <h4>
+            <span id="winner">waiting for players to join...</span>
+          </h4>
+          <div class="preloader-wrapper big active center-block">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- player2 card-->
-      <div id="player2-image-section" class="card-image">
-        <img id="player2-image" src="">
+    <!-- player2 card-->
+    <div class="card-stacked">
+      <!-- name -->
+      <div id="player2-name" class="card-content center">
+        <p>Waiting for Player 2...</p>
       </div>
-      <div class="card-stacked">
-        <!-- name -->
-        <div id="player2-name" class="card-content center">
-          <p>Waiting for Player 2...</p>
+      <!-- player2 image -->
+      <div style="width: 100% !important; margin: 0 auto;" id="player2-image-section" class="card-image center">
+          <img style="width: 100%; margin-top: -25%; margin-bottom: -25%;" class="center" id="player2-image" src="">
+          <h5 style="width: 100%; margin-top:-25%;"class="card-content center" id="player2-image-name"></h5>
         </div>
-        <!-- options -->
-        <div class="card-action card-stacked options">
-          <a id="player2-rock" disabled="disabled" class="player2-selection card-panel center" href="#">Rock</a>
-          <a id="player2-paper" disabled="disabled" class="player2-selection card-panel center" href="#">Paper</a>
-          <a id="player2-scissors" disabled="disabled" class="player2-selection card-panel center" href="#">Scissors</a>
-        </div>
-        <!-- win loss tie tally -->
-        <div class="card-content center">
-          <div>Wins:
-            <span id="player2-wins">0</span>
-            Losses:
-            <span id="player2-losses">0</span>
-            Ties:
-            <span id="player2-ties">0</span>
-          </div>
-        </div>
+    <!-- options -->
+    <div class="card-action card-stacked options">
+      <a id="player2-rock" disabled="disabled" class="player2-selection card-panel center" href="#">Rock</a>
+      <a id="player2-paper" disabled="disabled" class="player2-selection card-panel center" href="#">Paper</a>
+      <a id="player2-scissors" disabled="disabled" class="player2-selection card-panel center" href="#">Scissors</a>
+    </div>
+    <!-- win loss tie tally -->
+    <div class="card-content center">
+      <div>Wins:
+        <span id="player2-wins">0</span>
+        Losses:
+        <span id="player2-losses">0</span>
+        Ties:
+        <span id="player2-ties">0</span>
       </div>
+    </div>
+    </div>
     </div>
     <!-- chatbox -->
     <div id="chatbox" class="card">
@@ -169,6 +162,7 @@
   <script src="assets/js/database.js"></script>
   <script src="assets/js/chat.js"></script>
   <script src="assets/js/modal.js"></script>
+  <script src="assets/js/pokeApi.js"></script>
   <script src="assets/js/rps.js"></script>
 
 </body>

@@ -1,6 +1,21 @@
-// generate random pokemon
+// generate random pokemon and set image
+var contentsJSON = {}
 
-//connect to api
-//get pokemon
-//get pokemon image
-//insert pokemon image into html
+function updatePlayerImage(arguments) {
+    var randomPokemon = Math.floor(Math.random() * 802)
+
+    console.log(`random pokemon id ${randomPokemon}`);
+    url = `http://pokeapi.co/api/v2/pokemon/${randomPokemon}/`
+
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+        .then(response => response.text())
+        .then(contents => {
+            contentsJSON = $.parseJSON(contents);
+            console.log('src:', contentsJSON.sprites.front_shiny);
+            $('#player1-image').attr('src', contentsJSON.sprites.front_shiny);
+            $('#player1-image-name').text(contentsJSON.name);
+        })
+        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+}
+

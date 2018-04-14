@@ -1,0 +1,13 @@
+#modal1{
+    height: 200px;
+}
+
+#play-button{
+    background-color: var(--color4);
+    color: var(--color2) !important;
+}
+
+#watch-button{
+    background-color: var(--color1);
+    color: var(--color2) !important;
+}
